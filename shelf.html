@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Shelf | My BL Bookshelf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <h1>My BL Bookshelf</h1>
+            <p>Your personal BL collection</p>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shelf.html" class="active">My Shelf</a>
+            <a href="add.html">Add Show</a>
+            <a href="#">Watching</a>
+            <a href="#">Watchlist</a>
+            <a href="statistics.html">Statistics</a>
+            <a href="insights.html">Insights</a>
+            <a href="wrapped.html">BL Wrapped</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shelf-hero">
+
+    <div class="shelf-title">
+
+        <h1>My Shelf</h1>
+
+        <p>
+            Every story you've watched, loved,
+            or plan to watch — all in one place.
+        </p>
+
+    </div>
+
+    <div class="shelf-summary">
+
+        <div class="summary-pill">
+            <span id="shelfTotalShows">0</span>
+            <small>Stories</small>
+        </div>
+
+        <div class="summary-pill">
+            <span id="shelfAverageRating">0</span>
+            <small>Average</small>
+        </div>
+
+        <div class="summary-pill">
+            <span id="shelfCountries">0</span>
+            <small>Countries</small>
+        </div>
+
+    </div>
+
+
+        <section class="shelf-controls">
+            <input id="shelfSearch" type="text" placeholder="Search by title, country, mood, or trope...">
+
+            <div class="filter-bar">
+
+    <select id="countryFilter">
+        <option value="All">All Countries</option>
+        <option value="Korea">Korea</option>
+        <option value="Japan">Japan</option>
+        <option value="Taiwan">Taiwan</option>
+        <option value="Thailand">Thailand</option>
+    </select>
+
+    <select id="moodFilter">
+        <option value="All">All Moods</option>
+        <option value="Comfort">Comfort</option>
+        <option value="Emotional">Emotional</option>
+    </select>
+
+    <select id="ratingFilter">
+    <option value="All">All Ratings</option>
+    <option value="12">12/10</option>
+    <option value="11">11+</option>
+    <option value="10">10+</option>
+    <option value="9">9+</option>
+    <option value="8">8+</option>
+    <option value="below8">Below 8</option>
+</select>
+
+   <select id="sortFilter">
+    <option value="rating">Highest Rated</option>
+    <option value="lowest">Lowest Rated</option>
+    <option value="az">A-Z</option>
+    <option value="za">Z-A</option>
+    <option value="newest">Newest</option>
+    <option value="oldest">Oldest</option>
+</select>
+
+</div>
+        </section>
+
+        <section class="shelf-grid" id="shelfGrid">
+
+</section>
+    </main>
+<script src="data/shows.js"></script>
+<script src="script.js"></script>
+</body>
+    <body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="index.html">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+
+            <a href="shelf.html">
+                <span class="nav-icon">📖</span>
+                <span class="nav-text">My Shelf</span>
+            </a>
+
+            <a href="add.html" class="active">
+                <span class="nav-icon">➕</span>
+                <span class="nav-text">Add Show</span>
+            </a>
+
+            <a href="watchlist.html">
+                <span class="nav-icon">🔖</span>
+                <span class="nav-text">Watchlist</span>
+            </a>
+
+            <a href="statistics.html">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Statistics</span>
+            </a>
+
+            <a href="insights.html">
+                <span class="nav-icon">💡</span>
+                <span class="nav-text">Insights</span>
+            </a>
+
+            <a href="wrapped.html">
+                <span class="nav-icon">🎁</span>
+                <span class="nav-text">Wrapped</span>
+            </a>
+
+            <a href="settings.html">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Settings</span>
+            </a>
+        </nav>
+    </aside>
+</html>

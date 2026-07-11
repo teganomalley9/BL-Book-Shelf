@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My BL Bookshelf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="app-header">
+<div class="hero-title">
+
+    <div class="hero-logo-row">
+        <img
+            src="images/logo.png"
+            alt="My BL Bookshelf Logo"
+            class="hero-logo"
+        >
+
+        <h1>My BL Bookshelf</h1>
+    </div>
+
+    <p>
+        Every story you've watched, loved,
+        or plan to watch — all in one place.
+    </p>
+
+</div>
+
+<nav>
+
+
+    <nav class="sidebar-nav">
+
+    <a href="index.html" class="active"></a>>
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Dashboard</span>
+    </a>
+
+    <a href="shelf.html">
+        <span class="nav-icon">📖</span>
+        <span class="nav-text">My Shelf</span>
+    </a>
+
+    <a href="add.html">
+        <span class="nav-icon">➕</span>
+        <span class="nav-text">Add Show</span>
+    </a>
+
+    <a href="watchlist.html">
+        <span class="nav-icon">🔖</span>
+        <span class="nav-text">Watchlist</span>
+    </a>
+
+    <a href="statistics.html">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Statistics</span>
+    </a>
+
+    <a href="insights.html">
+        <span class="nav-icon">💡</span>
+        <span class="nav-text">Insights</span>
+    </a>
+
+    <a href="wrapped.html">
+        <span class="nav-icon">🎁</span>
+        <span class="nav-text">Wrapped</span>
+    </a>
+
+    <a href="settings.html">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-text">Settings</span>
+    </a>
+
+</nav>
+
+</nav>
+
+    </header>
+
+    <main>
+        <div class="hero-content">
+
+    <div class="hero-text">
+        <h1>My BL Bookshelf</h1>
+
+        <p>
+            Every story you've watched,
+            loved, or plan to watch —
+            all in one place.
+        </p>
+    </div>
+
+    <img
+        src="images/logo.png"
+        alt="Logo"
+        class="hero-logo"
+    >
+
+</div>
+</section>
+<!-- ===================== -->
+<!-- QUICK STATS -->
+<!-- ===================== -->
+
+<section class="dashboard-stats">
+
+    <div class="stat-card">
+        <div class="stat-icon">📚</div>
+        <div>
+            <h2 id="dashTotalShows">0</h2>
+            <p>Shows</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">✅</div>
+        <div>
+            <h2 id="dashCompletedShows">0</h2>
+            <p>Completed</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div>
+            <h2 id="dashAverageRating">0.0</h2>
+            <p>Average</p>
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon">🔖</div>
+        <div>
+            <h2 id="dashWatchlistCount">0</h2>
+            <p>Watchlist</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===================== -->
+<!-- MAIN GRID -->
+<!-- ===================== -->
+
+<section class="dashboard-main">
+
+    <div class="dashboard-left">
+
+        <section>
+
+            <div class="section-header">
+                <h2>▶ Continue Watching</h2>
+            </div>
+
+            <div id="continueWatching" class="continue-grid"></div>
+
+        </section>
+
+        <section>
+
+            <div class="section-header">
+                <h2>✨ Recently Finished</h2>
+            </div>
+
+            <div id="recentlyFinished"></div>
+
+        </section>
+
+    </div>
+
+    <aside class="dashboard-right">
+
+        <div class="quote-card">
+
+           <h3>💬 Quote of the Day</h3>
+
+<div class="quote-mark">❝</div>
+
+<p id="dailyQuote">
+    Every story becomes part of your bookshelf.
+</p>
+
+<div class="quote-end">❞</div>
+
+        </div>
+
+        <div class="vibe-card">
+
+            <h3>☁️ Today's Vibe</h3>
+
+<div class="vibe-emoji" id="todayMoodEmoji">
+🌸
+</div>
+
+<h2 id="todayMood">
+Cozy Evening
+</h2>
+
+<p id="todayMoodDescription">
+Perfect time for a comfort show.
+</p>
+
+        </div>
+
+    </aside>
+
+</section>
+  
+</section>   
+    </main>
+    <script src="data/shows.js"></script>
+<script src="script.js"></script>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+</div>
+
+        <nav class="sidebar-nav">
+            <a href="index.html" class="active">🏠 <span>Dashboard</span></a>
+            <a href="shelf.html">📖 <span>My Shelf</span></a>
+            <a href="add.html">➕ <span>Add Show</span></a>
+            <a href="watchlist.html">📋 <span>Watchlist</span></a>
+            <a href="statistics.html">📊 <span>Statistics</span></a>
+            <a href="insights.html">💡 <span>Insights</span></a>
+            <a href="wrapped.html">🎁 <span>BL Wrapped</span></a>
+            <a href="settings.html">⚙️ <span>Settings</span></a>
+        </nav>
+    </aside>
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Show | My BL Bookshelf</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="index.html">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+
+            <a href="shelf.html">
+                <span class="nav-icon">📖</span>
+                <span class="nav-text">My Shelf</span>
+            </a>
+
+            <a href="add.html" class="active">
+                <span class="nav-icon">➕</span>
+                <span class="nav-text">Add Show</span>
+            </a>
+
+            <a href="watchlist.html">
+                <span class="nav-icon">🔖</span>
+                <span class="nav-text">Watchlist</span>
+            </a>
+
+            <a href="statistics.html">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Statistics</span>
+            </a>
+
+            <a href="insights.html">
+                <span class="nav-icon">💡</span>
+                <span class="nav-text">Insights</span>
+            </a>
+
+            <a href="wrapped.html">
+                <span class="nav-icon">🎁</span>
+                <span class="nav-text">Wrapped</span>
+            </a>
+
+            <a href="settings.html">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="page-title">
+            <h1>Add New Show</h1>
+            <p>Add a new BL to your bookshelf or watchlist.</p>
+        </section>
+
+        <form id="addShowForm" class="add-form">
+
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                    id="title"
+                    type="text"
+                    placeholder="Show title"
+                    required
+                >
+            </div>
+<div class="form-group">
+    <label for="posterFile">Poster Image</label>
+
+    <input
+        id="posterFile"
+        type="file"
+        accept="image/png, image/jpeg, image/webp"
+    >
+
+    <input id="poster" type="hidden">
+
+    <div class="poster-preview-wrap">
+        <img id="posterPreview" alt="Poster preview">
+    </div>
+</div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input
+                    id="country"
+                    type="text"
+                    placeholder="Country"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="year">Year</label>
+                <input
+                    id="year"
+                    type="number"
+                    placeholder="Year"
+                    min="1900"
+                    max="2100"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="episodes">Total Episodes</label>
+                <input
+                    id="episodes"
+                    type="number"
+                    placeholder="Total episodes"
+                    min="1"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="currentEpisode">Current Episode</label>
+                <input
+                    id="currentEpisode"
+                    type="number"
+                    placeholder="Current episode"
+                    min="0"
+                    value="0"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Overall Rating</label>
+                <input
+                    id="rating"
+                    type="number"
+                    step="0.1"
+                    min="0"
+                    max="12"
+                    placeholder="Overall rating"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="chemistry">Chemistry /5</label>
+                <input
+                    id="chemistry"
+                    type="number"
+                    min="1"
+                    max="5"
+                    value="5"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="progression">Relationship Progression /5</label>
+                <input
+                    id="progression"
+                    type="number"
+                    min="1"
+                    max="5"
+                    value="5"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="emotionalImpact">Emotional Impact /5</label>
+                <input
+                    id="emotionalImpact"
+                    type="number"
+                    min="1"
+                    max="5"
+                    value="5"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="acting">Acting /5</label>
+                <input
+                    id="acting"
+                    type="number"
+                    min="1"
+                    max="5"
+                    value="5"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="rewatchability">Rewatchability /5</label>
+                <input
+                    id="rewatchability"
+                    type="number"
+                    min="1"
+                    max="5"
+                    value="5"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="mood">Mood</label>
+
+                <select id="mood">
+                    <option value="Comfort">Comfort</option>
+                    <option value="Emotional">Emotional</option>
+                    <option value="Healing">Healing</option>
+                    <option value="Funny">Funny</option>
+                    <option value="Romantic">Romantic</option>
+                    <option value="Fluffy">Fluffy</option>
+                    <option value="Mature">Mature</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Action">Action</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status</label>
+
+                <select id="status">
+                    <option value="Watchlist">📋 Watchlist</option>
+                    <option value="Watching">▶ Watching</option>
+                    <option value="Completed">✅ Completed</option>
+                    <option value="On Hold">⏸ On Hold</option>
+                    <option value="Dropped">❌ Dropped</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="priority">Priority</label>
+
+                <select id="priority">
+                    <option value="Must Watch">⭐ Must Watch</option>
+                    <option value="High">🔥 High</option>
+                    <option value="Medium" selected>🙂 Medium</option>
+                    <option value="Low">💭 Low</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dateStarted">📅 Date Started</label>
+                <input id="dateStarted" type="date">
+            </div>
+
+            <div class="form-group">
+                <label for="dateFinished">✅ Date Finished</label>
+                <input id="dateFinished" type="date">
+            </div>
+
+            <div class="form-group">
+                <label for="tropes">Tropes</label>
+                <input
+                    id="tropes"
+                    type="text"
+                    placeholder="Slow Burn, Friends to Lovers, Found Family"
+                >
+            </div>
+
+            <div class="form-group form-group-wide">
+                <label for="miniReview">Mini Review</label>
+                <textarea
+                    id="miniReview"
+                    placeholder="Write your mini review..."
+                ></textarea>
+            </div>
+
+            <div class="form-group form-group-wide">
+                <label for="favoriteScene">Favorite Scene</label>
+                <textarea
+                    id="favoriteScene"
+                    placeholder="Describe your favorite scene..."
+                ></textarea>
+            </div>
+
+            <div class="form-actions form-group-wide">
+                <a class="cancel-btn" href="shelf.html">
+                    Cancel
+                </a>
+
+                <button type="submit">
+                    Add Show
+                </button>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="data/shows.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

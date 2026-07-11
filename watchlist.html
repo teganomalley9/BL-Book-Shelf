@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Watchlist | My BL Bookshelf</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            
+        </div>
+
+      <nav class="sidebar-nav">
+    <a href="index.html">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Dashboard</span>
+    </a>
+
+    <a href="shelf.html">
+        <span class="nav-icon">📖</span>
+        <span class="nav-text">My Shelf</span>
+    </a>
+
+    <a href="add.html">
+        <span class="nav-icon">➕</span>
+        <span class="nav-text">Add Show</span>
+    </a>
+
+    <a href="watchlist.html"class="active">
+        <span class="nav-icon">🔖</span>
+        <span class="nav-text">Watchlist</span>
+    </a>
+
+    <a href="statistics.html">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Statistics</span>
+    </a>
+
+    <a href="insights.html">
+        <span class="nav-icon">💡</span>
+        <span class="nav-text">Insights</span>
+    </a>
+
+    <a href="wrapped.html">
+        <span class="nav-icon">🎁</span>
+        <span class="nav-text">Wrapped</span>
+    </a>
+
+    <a href="settings.html">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-text">Settings</span>
+    </a>
+</nav>
+   
+    </aside>
+
+    <main>
+        <section class="page-title">
+            <h2>📋 Watchlist</h2>
+            <p>Shows waiting on your shelf.</p>
+        </section>
+
+        <section class="watchlist-controls">
+    <input id="watchlistSearch" type="text" placeholder="Search watchlist...">
+
+    <select id="watchlistCountry">
+        <option value="All">All Countries</option>
+        <option value="Korea">Korea</option>
+        <option value="Japan">Japan</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Taiwan">Taiwan</option>
+        <option value="China">China</option>
+        <option value="Philippines">Philippines</option>
+    </select>
+
+    <select id="watchlistMood">
+        <option value="All">All Moods</option>
+        <option value="Comfort">Comfort</option>
+        <option value="Fluffy">Fluffy</option>
+        <option value="Funny">Funny</option>
+        <option value="Emotional">Emotional</option>
+        <option value="Romantic">Romantic</option>
+        <option value="Healing">Healing</option>
+        <option value="Mature">Mature</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Action">Action</option>
+    </select>
+
+    <select id="watchlistEpisodes">
+        <option value="All">All Episodes</option>
+        <option value="short">1–8 Episodes</option>
+        <option value="medium">9–12 Episodes</option>
+        <option value="long">13–16 Episodes</option>
+        <option value="extra">17+ Episodes</option>
+    </select>
+
+    <select id="watchlistSort">
+        <option value="az">A-Z</option>
+        <option value="shortest">Shortest First</option>
+        <option value="longest">Longest First</option>
+    </select>
+    <div class="watchlist-random">
+    <button id="pickRandomBtn">🎲 Pick My Next BL</button>
+</div>
+
+</section>
+
+<div id="watchlistTable" class="watchlist-table"></div>
+    </main>
+
+
+<div id="recommendationModal" class="recommendation-modal">
+    <div class="recommendation-card">
+        <button id="closeRecommendation" class="close-recommendation">
+            ✕
+        </button>
+        <div id="randomRecommendation"></div>
+    </div>
+</div>
+<script src="data/shows.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

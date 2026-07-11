@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BL Wrapped</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+    <div class="sidebar-logo">
+       
+    </div>
+
+   <nav class="sidebar-nav">
+    <a href="index.html">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Dashboard</span>
+    </a>
+
+    <a href="shelf.html">
+        <span class="nav-icon">📖</span>
+        <span class="nav-text">My Shelf</span>
+    </a>
+
+    <a href="add.html">
+        <span class="nav-icon">➕</span>
+        <span class="nav-text">Add Show</span>
+    </a>
+
+    <a href="watchlist.html">
+        <span class="nav-icon">🔖</span>
+        <span class="nav-text">Watchlist</span>
+    </a>
+
+    <a href="statistics.html">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Statistics</span>
+    </a>
+
+    <a href="insights.html">
+        <span class="nav-icon">💡</span>
+        <span class="nav-text">Insights</span>
+    </a>
+
+    <a href="wrapped.html"class="active">
+        <span class="nav-icon">🎁</span>
+        <span class="nav-text">Wrapped</span>
+    </a>
+
+    <a href="settings.html">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-text">Settings</span>
+    </a>
+</nav>
+   
+</aside>
+
+<main>
+
+<div class="wrapped-container">
+
+<section class="wrapped-slide active-slide">
+
+<h1>🎁</h1>
+
+<h2>My BL Wrapped</h2>
+
+<h3>2026</h3>
+
+<p>Ready to relive your year?</p>
+
+<button id="nextSlide">
+Start →
+</button>
+
+</section>
+
+<section class="wrapped-slide">
+
+<h1>📚</h1>
+
+<h2>You watched</h2>
+
+<div id="wrappedShows" class="wrapped-number">
+0
+</div>
+
+<p>Shows</p>
+
+<button class="nextWrapped">
+    >Next →
+</button>
+</section> 
+
+<section class="wrapped-slide">
+    <h1>⏱️</h1>
+    <h2>You spent</h2>
+    <div id="wrappedHours" class="wrapped-number">0</div>
+    <p>hours watching BL</p>
+    <button class="nextWrapped"
+    >Next →
+</button>
+</section>
+
+<section class="wrapped-slide">
+
+<h1>🇰🇷</h1>
+
+<h2>Favorite Country</h2>
+
+<div id="wrappedCountry" class="wrapped-number">
+—
+</div>
+
+<button class="nextWrapped">
+Next →
+</button>
+
+</section>
+<section class="wrapped-slide">
+
+    <h1>😊</h1>
+
+    <h2>Your Favorite Mood</h2>
+
+    <div id="wrappedMood" class="wrapped-number">
+        —
+    </div>
+
+    <button class="nextWrapped">
+        Next →
+    </button>
+
+</section>
+<section class="wrapped-slide">
+
+    <h1>❤️</h1>
+
+    <h2>Your Favorite Trope</h2>
+
+    <div id="wrappedTrope" class="wrapped-number">
+        —
+    </div>
+
+    <button class="nextWrapped">
+        Next →
+    </button>
+
+</section>
+<section class="wrapped-slide">
+
+    <h1>⭐</h1>
+
+    <h2>Average Rating</h2>
+
+    <div id="wrappedAverage" class="wrapped-number">
+        —
+    </div>
+
+    <p>out of 10</p>
+
+    <button class="nextWrapped">
+        Next →
+    </button>
+
+</section>
+
+<section class="wrapped-slide">
+
+    <h1>✨</h1>
+
+    <h2>Your BL Personality</h2>
+
+    <div id="wrappedPersonality" class="wrapped-number">
+        —
+    </div>
+
+    <p id="wrappedPersonalityText">
+        —
+    </p>
+
+    <button class="nextWrapped">
+        Next →
+    </button>
+
+</section>
+<section class="wrapped-slide">
+
+    <h1>📚</h1>
+
+    <h2>My BL Bookshelf Wrapped</h2>
+
+    <div class="wrapped-summary-card">
+        <h3 id="summaryProfile">—</h3>
+        <p id="summaryProfileText">—</p>
+
+        <div class="summary-grid">
+            <p>📚 <span id="summaryShows">0</span> Shows</p>
+            <p>⏱️ <span id="summaryHours">0</span> Hours</p>
+            <p>🌍 <span id="summaryCountry">—</span></p>
+            <p>😊 <span id="summaryMood">—</span></p>
+            <p>❤️ <span id="summaryTrope">—</span></p>
+            <p>⭐ <span id="summaryAverage">—</span>/10</p>
+            <p>🏆 <span id="summaryBest">—</span></p>
+        </div>
+    </div>
+
+    <a href="index.html" class="wrapped-home-btn">Return to Dashboard</a>
+
+</section>
+
+<section class="wrapped-slide">
+
+<h1>🏆</h1>
+
+<h2>Show of the Year</h2>
+
+<div id="wrappedBest">
+—
+</div>
+
+<button class="nextWrapped">
+Finish
+</button>
+
+</section>
+
+</div>
+
+<div class="wrapped-progress">
+
+<div class="wrapped-dot active-dot"></div>
+<div class="wrapped-dot"></div>
+<div class="wrapped-dot"></div>
+<div class="wrapped-dot"></div>
+<div class="wrapped-dot"></div>
+<div class="wrapped-dot"></div>
+<div class="wrapped-dot"></div>
+<div class="wrapped-dot"></div>
+<div class="wrapped-dot"></div>
+<div class="wrapped-dot"></div>
+
+</div>
+
+<script src="data/shows.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
