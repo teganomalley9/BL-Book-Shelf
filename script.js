@@ -43,52 +43,28 @@ reader.onload = event => {
 
     img.onload = () => {
 
-        const canvas = document.createElement("canvas");
+   const canvas = document.createElement("canvas");
 
-        const width = 240;
-        const height = 360;
+const width = 240;
+const height = 360;
 
-        canvas.width = width;
-        canvas.height = height;
+canvas.width = width;
+canvas.height = height;
 
-        const ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 
-        const sourceRatio = img.width / img.height;
-const targetRatio = width / height;
+ctx.imageSmoothingEnabled = true;
+ctx.imageSmoothingQuality = "high";
 
-let sourceWidth = img.width;
-let sourceHeight = img.height;
-let sourceX = 0;
-let sourceY = 0;
+ctx.drawImage(img, 0, 0, width, height);
 
-if (sourceRatio > targetRatio) {
-    sourceWidth = img.height * targetRatio;
-    sourceX = (img.width - sourceWidth) / 2;
-} else {
-    sourceHeight = img.width / targetRatio;
-    sourceY = (img.height - sourceHeight) / 2;
-}
-
-ctx.drawImage(
-    img,
-    sourceX,
-    sourceY,
-    sourceWidth,
-    sourceHeight,
-    0,
-    0,
-    width,
-    height
+const compressed = canvas.toDataURL(
+    "image/jpeg",
+    0.88
 );
 
-        // Save as compressed JPEG
-        const compressed = canvas.toDataURL(
-            "image/jpeg",
-            0.9
-        );
-
-        posterValue.value = compressed;
-        displayPoster(compressed);
+posterValue.value = compressed;
+displayPoster(compressed);
 
     };
 
