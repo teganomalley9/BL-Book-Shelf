@@ -24,6 +24,10 @@ if (posterFile && posterValue && posterPreview) {
         const file = event.target.files[0];
 
         if (!file) return;
+        if (file.size > 5 * 1024 * 1024) {
+    alert("Please choose an image smaller than 5 MB.");
+    return;
+}
 
         if (!file.type.startsWith("image/")) {
             alert("Please choose a valid image file.");
@@ -33,16 +37,40 @@ if (posterFile && posterValue && posterPreview) {
 
         const reader = new FileReader();
 
-        reader.addEventListener("load", () => {
-            posterValue.value = reader.result;
-            displayPoster(reader.result);
-        });
+reader.onload = event => {
 
-        reader.addEventListener("error", () => {
-            alert("The poster image could not be loaded.");
-        });
+    const img = new Image();
 
-        reader.readAsDataURL(file);
+    img.onload = () => {
+
+        const canvas = document.createElement("canvas");
+
+        const width = 200;
+        const height = 300;
+
+        canvas.width = width;
+        canvas.height = height;
+
+        const ctx = canvas.getContext("2d");
+
+        ctx.drawImage(img, 0, 0, width, height);
+
+        // Save as compressed JPEG
+        const compressed = canvas.toDataURL(
+            "image/jpeg",
+            0.75
+        );
+
+        posterValue.value = compressed;
+        displayPoster(compressed);
+
+    };
+
+    img.src = event.target.result;
+
+};
+
+reader.readAsDataURL(file);
     });
 }
 let savedShows = JSON.parse(localStorage.getItem("savedShows"));
