@@ -45,8 +45,8 @@ reader.onload = event => {
 
         const canvas = document.createElement("canvas");
 
-        const width = 250;
-        const height = 375;
+        const width = 300;
+        const height = 450;
 
         canvas.width = width;
         canvas.height = height;
