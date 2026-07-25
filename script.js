@@ -45,8 +45,8 @@ reader.onload = event => {
 
         const canvas = document.createElement("canvas");
 
-        const width = 200;
-        const height = 300;
+        const width = 250;
+        const height = 375;
 
         canvas.width = width;
         canvas.height = height;
@@ -58,7 +58,7 @@ reader.onload = event => {
         // Save as compressed JPEG
         const compressed = canvas.toDataURL(
             "image/jpeg",
-            0.75
+            0.9
         );
 
         posterValue.value = compressed;
