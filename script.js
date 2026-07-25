@@ -45,15 +45,41 @@ reader.onload = event => {
 
         const canvas = document.createElement("canvas");
 
-        const width = 300;
-        const height = 450;
+        const width = 240;
+        const height = 360;
 
         canvas.width = width;
         canvas.height = height;
 
         const ctx = canvas.getContext("2d");
 
-        ctx.drawImage(img, 0, 0, width, height);
+        const sourceRatio = img.width / img.height;
+const targetRatio = width / height;
+
+let sourceWidth = img.width;
+let sourceHeight = img.height;
+let sourceX = 0;
+let sourceY = 0;
+
+if (sourceRatio > targetRatio) {
+    sourceWidth = img.height * targetRatio;
+    sourceX = (img.width - sourceWidth) / 2;
+} else {
+    sourceHeight = img.width / targetRatio;
+    sourceY = (img.height - sourceHeight) / 2;
+}
+
+ctx.drawImage(
+    img,
+    sourceX,
+    sourceY,
+    sourceWidth,
+    sourceHeight,
+    0,
+    0,
+    width,
+    height
+);
 
         // Save as compressed JPEG
         const compressed = canvas.toDataURL(
