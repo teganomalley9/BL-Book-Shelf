@@ -1030,111 +1030,110 @@ if (dashTotalShows) {
 const continueWatching = document.getElementById("continueWatching");
 
 if (continueWatching) {
-    const watchingShows = allShows.filter(show => show.status === "Watching");
+    const watchingShows = allShows.filter(
+        show =>
+            show.status &&
+            show.status.trim().toLowerCase() === "watching"
+    );
 
     if (watchingShows.length === 0) {
         continueWatching.innerHTML = `
-            <p class="empty-message">Nothing currently watching.</p>
+            <p class="empty-message">
+                Nothing currently watching.
+            </p>
         `;
     } else {
-        const featuredShow = watchingShows.sort(
-    (a, b) => (b.currentEpisode || 0) - (a.currentEpisode || 0)
-)[0];
-    
+        const featuredShow = [...watchingShows].sort(
+            (a, b) =>
+                (b.currentEpisode || 0) -
+                (a.currentEpisode || 0)
+        )[0];
 
-if (featuredShow) {
+        continueWatching.innerHTML = `
+            <div class="continue-card">
+                <img
+                    src="${featuredShow.poster}"
+                    alt="${featuredShow.title}"
+                >
 
-    const show = featuredShow;
-     continueWatching.innerHTML = `
+                <div class="continue-content">
+                    <h3>${featuredShow.title}</h3>
 
-        <div class="continue-card">
-
-            <img src="${show.poster}" alt="${show.title}">
-
-            <div class="continue-content">
-
-                <h3>${show.title}</h3>
-
-                <div class="continue-meta">
-                    Episode ${show.currentEpisode || 1}
-                    of
-                    ${show.episodes}
-                </div>
-
-                <div class="progress-track">
-
-                    <div
-                        class="progress-fill"
-                        style="width:${
-                            ((show.currentEpisode || 1) /
-                            show.episodes) * 100
-                        }%">
+                    <div class="continue-meta">
+                        Episode ${featuredShow.currentEpisode || 0}
+                        of ${featuredShow.episodes}
                     </div>
 
+                    <div class="progress-track">
+                        <div
+                            class="progress-fill"
+                            style="width:${
+                                Math.min(
+                                    ((featuredShow.currentEpisode || 0) /
+                                        featuredShow.episodes) * 100,
+                                    100
+                                )
+                            }%">
+                        </div>
+                    </div>
+
+                    <button
+                        class="continue-button"
+                        data-id="${featuredShow.id}"
+                        type="button">
+                        ▶ Next Episode
+                    </button>
                 </div>
-
-                <button class="continue-button" data-id="${show.id}">
-                 ▶ Next Episode
-                </button>
-
             </div>
+        `;
 
-        </div>
-    `;
-    const continueButton =
-    continueWatching.querySelector(".continue-button");
+        const continueButton =
+            continueWatching.querySelector(".continue-button");
 
-    continueButton.addEventListener("click", event => {
-        event.preventDefault();
+        continueButton.addEventListener("click", () => {
+            const showId = continueButton.dataset.id;
 
-    const showId = continueButton.dataset.id;
+            const show = savedShows.find(
+                item => item.id === showId
+            );
 
+            if (!show) return;
 
-    const show = savedShows.find(
-        item => item.id === showId
-    );
+            const today =
+                new Date().toISOString().split("T")[0];
 
-    if (!show) return;
+            show.currentEpisode = Math.min(
+                (show.currentEpisode || 0) + 1,
+                Number(show.episodes)
+            );
 
-    const today =
-        new Date().toISOString().split("T")[0];
+            if (!show.dateStarted && show.currentEpisode > 0) {
+                show.dateStarted = today;
+            }
 
-    show.currentEpisode = Math.min(
-        (show.currentEpisode || 0) + 1,
-        show.episodes
-    );
+            const isFinished =
+                show.currentEpisode >= Number(show.episodes);
 
-    if (!show.dateStarted &&
-        show.currentEpisode > 0) {
+            if (isFinished) {
+                show.status = "Completed";
+                show.dateFinished =
+                    show.dateFinished || today;
+            }
 
-        show.dateStarted = today;
+            localStorage.setItem(
+                "savedShows",
+                JSON.stringify(savedShows)
+            );
+
+            if (isFinished) {
+                window.location.href =
+                    `edit.html?id=${encodeURIComponent(show.id)}`;
+            } else {
+                location.reload();
+            }
+        });
     }
-
-const isFinished =
-    show.currentEpisode >= show.episodes;
-
-if (isFinished) {
-    show.status = "Completed";
-    show.dateFinished = show.dateFinished || today;
 }
-
-localStorage.setItem(
-    "savedShows",
-    JSON.stringify(savedShows)
-);
-
-if (isFinished) {
-    window.location.href = `edit.html?id=${show.id}`;
-} else {
-    location.reload();
-}
-
-    }); // closes the button click listener
-}      // closes if (featuredShow)
-}      // closes the else block
-}      // closes if (continueWatching)
-
-const recentlyFinished = document.getElementById("recentlyFinished");
 
 const recentlyFinished = document.getElementById("recentlyFinished");
 
