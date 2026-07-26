@@ -1864,325 +1864,345 @@ body:has(.sidebar:hover) main {
     object-fit:contain;
     flex-shrink:0;
 }
-/* =========================
-   WATCHLIST FINAL DESIGN
-   ========================= */
+/* ==========================================
+   WATCHLIST
+========================================== */
 
 .watchlist-controls{
     display:grid;
     grid-template-columns:
-    minmax(420px,2.8fr)
-        170px 2fr
-        120px 1 fr
-        230px .8fr;
+        2fr
+        1fr
+        1fr
+        .8fr
         auto;
 
+    gap:18px;
     align-items:center;
 
-    gap:18px;
+    margin:35px 0;
 }
 
 #watchlistSearch,
 #watchlistCountry,
 #watchlistEpisodes,
-#watchlistSort {
-    width: 100%;
-    box-sizing: border-box;
+#watchlistSort{
 
-    padding: 15px 18px;
+    width:100%;
 
-    background: rgba(18, 18, 45, 0.9);
-    color: var(--text);
+    padding:16px 22px;
 
-    border: 1px solid rgba(139, 92, 246, 0.35);
-    border-radius: 14px;
+    border-radius:18px;
+    border:1px solid rgba(139,92,246,.25);
 
-    font-family: "Outfit", sans-serif;
-    font-size: 1rem;
+    background:#181539;
 
-    outline: none;
+    color:white;
+
+    font-size:1rem;
+    font-family:"Outfit",sans-serif;
+
+    transition:.25s;
 }
 
-#watchlistSearch::placeholder {
-    color: rgba(255, 255, 255, 0.55);
+#watchlistSearch::placeholder{
+    color:rgba(255,255,255,.55);
 }
 
 #watchlistSearch:focus,
 #watchlistCountry:focus,
 #watchlistEpisodes:focus,
-#watchlistSort:focus {
-    border-color: #a855f7;
+#watchlistSort:focus{
+
+    outline:none;
+
+    border-color:#9d5cff;
 
     box-shadow:
         0 0 0 4px
-        rgba(139, 92, 246, 0.12);
+        rgba(157,92,255,.15);
 }
 
-#watchlistCountry,
-#watchlistEpisodes,
-#watchlistSort {
-    cursor: pointer;
-}
+#pickRandomBtn{
 
-#pickRandomBtn {
-    min-width: 250px;
+    width:340px;
 
-    padding: 16px 26px;
+    height:74px;
 
-    border: none;
-    border-radius: 18px;
+    border:none;
+    border-radius:22px;
 
-    background: linear-gradient(
-        135deg,
-        #8b5cf6,
-        #a855f7
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #b04dff
+        );
 
-    color: white;
+    color:white;
 
-    font-family: "Outfit", sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
+    font-size:1.2rem;
+    font-weight:700;
 
-    cursor: pointer;
+    cursor:pointer;
+
+    transition:.25s;
 
     box-shadow:
-        0 12px 28px
-        rgba(139, 92, 246, 0.3);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        0 18px 35px
+        rgba(139,92,246,.30);
 }
 
-#pickRandomBtn:hover {
-    transform: translateY(-2px);
+#pickRandomBtn:hover{
+
+    transform:translateY(-3px);
 
     box-shadow:
-        0 16px 34px
-        rgba(139, 92, 246, 0.4);
+        0 22px 40px
+        rgba(139,92,246,.42);
 }
 
-#watchlistTable {
-    overflow: hidden;
 
-    background: rgba(13, 17, 40, 0.72);
+/* ================= TABLE ================= */
 
-    border: 1px solid rgba(139, 92, 246, 0.22);
-    border-radius: 22px;
+#watchlistTable{
+
+    margin-top:40px;
+
+    background:#181539;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    border:1px solid
+        rgba(255,255,255,.08);
 
     box-shadow:
-        0 18px 40px
-        rgba(0, 0, 0, 0.22);
+        0 15px 40px
+        rgba(0,0,0,.25);
 }
 
 .watchlist-header,
-.watchlist-row {
-    display: grid;
+.watchlist-row{
+
+    display:grid;
 
     grid-template-columns:
-        minmax(420px, 2.8fr)
-        180px
-        150px
-        260px;
 
-    gap: 24px;
-    align-items: center;
+        minmax(420px,2.8fr)
+        190px
+        140px
+        250px;
+
+    align-items:center;
+
+    gap:20px;
 }
 
-.watchlist-header {
-    padding: 22px 26px;
-      position:sticky;
-    top:0;
-    z-index:5;
+.watchlist-header{
 
-    backdrop-filter:blur(10px);
-
-    background: linear-gradient(
-        90deg,
-        rgba(139, 92, 246, 0.12),
-        rgba(24, 25, 55, 0.35)
-    );
-
-    border-bottom: 1px solid rgba(139, 92, 246, 0.28);
-
-    color: #c084fc;
-
-    font-size: 0.95rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.watchlist-row {
-    min-height:70px;
-    padding:10px 26px;
-}
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-.watchlist-row:last-child {
-    border-bottom: none;
-}
-
- .watchlist-row:hover{
-
-    transform:translateX(6px);
+    padding:24px 34px;
 
     background:
-        rgba(139,92,246,.08);
+        linear-gradient(
+            90deg,
+            rgba(139,92,246,.12),
+            rgba(20,20,40,.20)
+        );
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:#c785ff;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
 }
 
-.watchlist-title {
-    font-size: 1.05rem;
-    font-weight: 700;
+.watchlist-row{
+
+    min-height:76px;
+
+    padding:0 34px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+
+    transition:.2s;
 }
 
-.watchlist-action {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.watchlist-row:last-child{
+
+    border-bottom:none;
 }
 
-.start-watching-btn {
-    min-width: 170px;
+.watchlist-row:hover{
 
-    padding: 10px 18px;
-
-    border: none;
-    border-radius: 999px;
-
-    background: linear-gradient(
-        135deg,
-        #8b5cf6,
-        #9333ea
-    );
-
-    color: white;
-
-    font-family: "Outfit", sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 8px 20px
-        rgba(139, 92, 246, 0.24);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    background:
+        rgba(139,92,246,.05);
 }
 
-.start-watching-btn:hover {
-    transform: translateY(-2px);
 
-    box-shadow:
-        0 12px 24px
-        rgba(139, 92, 246, 0.36);
+/* ============== CELLS ============== */
+
+.watchlist-title{
+
+    font-size:1.08rem;
+
+    font-weight:700;
 }
 
-/* Tablet */
-@media (max-width: 1050px) {
-    .watchlist-controls {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+.watchlist-country{
 
-    #pickRandomBtn {
-        width: 100%;
-        grid-column: 1 / -1;
-    }
-
-    .watchlist-header,
-    .watchlist-row {
-        grid-template-columns:
-            minmax(220px, 1.7fr)
-            minmax(120px, 1fr)
-            minmax(80px, 0.6fr)
-            minmax(170px, 1fr);
-    }
+    display:flex;
+    align-items:center;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-    .watchlist-controls {
-        grid-template-columns: 1fr;
-    }
+.watchlist-episodes{
 
-    #pickRandomBtn {
-        grid-column: auto;
-    }
+    font-size:1rem;
 
-    .watchlist-header {
-        display: none;
-    }
-
-    .watchlist-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-
-        padding: 20px;
-    }
-
-    .watchlist-row span:nth-child(2)::before {
-        content: "Country: ";
-        color: var(--muted);
-    }
-
-    .watchlist-row span:nth-child(3)::before {
-        content: "Episodes: ";
-        color: var(--muted);
-    }
-
-    .watchlist-action {
-        margin-top: 6px;
-    }
-
-    .start-watching-btn {
-        width: 100%;
-    }
+    font-weight:600;
 }
-.country-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
-    min-width: 62px;
-    padding: 3px 9px;
+.watchlist-action{
 
-    border-radius: 999px;
+    display:flex;
 
-    font-size: 0.72rem;
-    font-weight: 700;
+    justify-content:flex-start;
+}
+
+
+/* ============== COUNTRY BADGES ============== */
+
+.country-badge{
+
+    display:inline-flex;
+
+    justify-content:center;
+    align-items:center;
+
+    min-width:72px;
+
+    padding:5px 10px;
+
+    border-radius:999px;
+
+    font-size:.72rem;
+
+    font-weight:700;
 }
 
 .country-badge.korea{
-    background:#1f4fd3;
+
+    background:#2c58d5;
     color:white;
 }
 
 .country-badge.japan{
-    background:#f3f3f3;
-    color:#d6001c;
+
+    background:white;
+    color:#d80027;
+}
+
+.country-badge.china{
+
+    background:#df3434;
+    color:white;
 }
 
 .country-badge.thailand{
-    background:#c62828;
+
+    background:#d83232;
     color:white;
 }
 
 .country-badge.taiwan{
-    background:#1565c0;
+
+    background:#2371d8;
     color:white;
 }
 
-.country-badge.china{
-    background:#d32f2f;
+
+/* ============== BUTTON ============== */
+
+.start-watching-btn{
+
+    width:180px;
+
+    padding:12px 0;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #a64dff
+        );
+
     color:white;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    box-shadow:
+        0 10px 20px
+        rgba(139,92,246,.25);
+}
+
+.start-watching-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 14px 26px
+        rgba(139,92,246,.38);
+}
+
+
+/* ============== MOBILE ============== */
+
+@media(max-width:1100px){
+
+.watchlist-controls{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+#pickRandomBtn{
+
+grid-column:1/-1;
+
+width:100%;
+
+}
+
+.watchlist-header,
+.watchlist-row{
+
+grid-template-columns:
+2fr
+1fr
+100px
+180px;
+
+}
+
 }
