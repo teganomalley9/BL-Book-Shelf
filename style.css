@@ -2075,7 +2075,7 @@ body:has(.sidebar:hover) main {
     align-items: center;
     justify-content: center;
 
-    min-width: 82px;
+    min-width: 100px;
     padding: 6px 12px;
 
     border-radius: 999px;
