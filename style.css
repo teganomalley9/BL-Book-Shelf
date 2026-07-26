@@ -2224,3 +2224,6 @@ body:has(.sidebar:hover) main {
     padding: 5px 12px !important;
     min-width: 80px !important;
 }
+.watchlist-header > :nth-child(4) {
+    visibility: hidden !important;
+}
