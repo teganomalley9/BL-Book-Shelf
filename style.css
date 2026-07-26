@@ -1988,7 +1988,7 @@ body:has(.sidebar:hover) main {
         minmax(100px, 0.55fr)
         minmax(200px, 1fr);
 
-    gap: 24px;
+    gap: 12px;
     align-items: center;
 
     box-sizing: border-box;
