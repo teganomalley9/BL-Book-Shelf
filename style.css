@@ -1908,10 +1908,10 @@ body:has(.sidebar:hover) main {
 .watchlist-controls {
     display: grid;
     grid-template-columns:
-        minmax(220px, 1.3fr)
-        minmax(170px, 1fr)
-        minmax(170px, 1fr)
-        minmax(150px, 0.8fr)
+minmax(420px,2.8fr)
+        170px
+        120px
+        230px;
         auto;
 
     gap: 16px;
@@ -2030,6 +2030,11 @@ body:has(.sidebar:hover) main {
 
 .watchlist-header {
     padding: 22px 26px;
+      position:sticky;
+    top:0;
+    z-index:5;
+
+    backdrop-filter:blur(10px);
 
     background: linear-gradient(
         90deg,
@@ -2048,8 +2053,9 @@ body:has(.sidebar:hover) main {
 }
 
 .watchlist-row {
-    min-height: 78px;
-    padding: 12px 26px;
+    min-height:70px;
+    padding:10px 26px;
+}
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
@@ -2062,8 +2068,12 @@ body:has(.sidebar:hover) main {
     border-bottom: none;
 }
 
-.watchlist-row:hover {
-    background: rgba(139, 92, 246, 0.07);
+ .watchlist-row:hover{
+
+    transform:translateX(6px);
+
+    background:
+        rgba(139,92,246,.08);
 }
 
 .watchlist-title {
@@ -2078,9 +2088,9 @@ body:has(.sidebar:hover) main {
 }
 
 .start-watching-btn {
-    min-width: 180px;
+    min-width: 170px;
 
-    padding: 12px 20px;
+    padding: 10px 18px;
 
     border: none;
     border-radius: 999px;
