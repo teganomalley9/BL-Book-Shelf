@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DwaM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
     --bg: #0f1028;
@@ -898,43 +898,6 @@ body:has(.sidebar:hover) main {
     margin-left: 260px;
 }
 
-
-
-.watchlist-header {
-    background: #111827;
-    color: #cbd5e1;
-    font-weight: 700;
-}
-
-.watchlist-row {
-    border-top: 1px solid #374151;
-}
-
-.watchlist-title {
-    font-weight: 700;
-}
-
-.watchlist-row a {
-    background: #8b5cf6;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    padding: 8px 12px;
-    border-radius: 999px;
-    font-weight: 700;
-}
-
-.watchlist-row a:hover {
-    background: #7c3aed;
-}
-
-.start-watching-btn:hover {
-    background: #7c3aed;
-}
-.watchlist-random{
-    margin:24px 0;
-    text-align:center;
-}
 
 #pickRandomBtn{
     background:#8B5CF6;
@@ -2018,10 +1981,10 @@ body:has(.sidebar:hover) main {
     display: grid;
 
     grid-template-columns:
-        minmax(280px, 2fr)
-        minmax(150px, 1fr)
-        minmax(100px, 0.65fr)
-        minmax(190px, 0.9fr);
+        minmax(420px, 2.8fr)
+        180px
+        150px
+        260px;
 
     gap: 24px;
     align-items: center;
@@ -2185,19 +2148,18 @@ body:has(.sidebar:hover) main {
         width: 100%;
     }
 }
-.country-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
+.country-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    padding:4px 10px;
+    min-width: 62px;
+    padding: 3px 9px;
 
-    border-radius:999px;
+    border-radius: 999px;
 
-    font-size:.75rem;
-    font-weight:600;
-
-    min-width:68px;
+    font-size: 0.72rem;
+    font-weight: 700;
 }
 
 .country-badge.korea{
