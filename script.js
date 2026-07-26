@@ -1297,18 +1297,9 @@ if (watchlistTable) {
 
         watchlistShows.forEach(show => {
     watchlistTable.innerHTML += `
-        <div class="watchlist-row">
-            <div class="watchlist-show">
-    <img
-        class="watchlist-poster"
-        src="${show.poster || 'images/placeholder.png'}"
-        alt="${show.title}"
-    >
-
-    <span class="watchlist-title">
-        ${show.title}
-    </span>
-</div>
+        <span class="watchlist-title">
+    ${show.title}
+        </span>
             <span class="country-badge ${show.country.toLowerCase()}">
                 ${show.country}
             </span>
