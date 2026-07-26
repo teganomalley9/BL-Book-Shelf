@@ -1287,6 +1287,13 @@ if (watchlistTable) {
         <span>Action</span>
     </div>
 `;
+        const countryFlags = {
+    Korea: "🇰🇷",
+    Japan: "🇯🇵",
+    Thailand: "🇹🇭",
+    Taiwan: "🇹🇼",
+    China: "🇨🇳"
+};
 
         watchlistShows.forEach(show => {
     watchlistTable.innerHTML += `
@@ -1296,7 +1303,7 @@ if (watchlistTable) {
             </span>
 
             <span>
-                ${show.country || "Unknown"}
+              ${countryFlags[show.country] || "🌍"} ${show.country || "Unknown"}
             </span>
 
             <span>
