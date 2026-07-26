@@ -2065,7 +2065,9 @@ body:has(.sidebar:hover) main {
     font-size: 1rem;
     font-weight: 650;
 }
-
+.watchlist-header span:nth-child(3) {
+    text-align: center;
+}
 /* ---------- COUNTRY BADGES ---------- */
 
 .country-badge {
