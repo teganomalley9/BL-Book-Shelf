@@ -2190,12 +2190,14 @@ body:has(.sidebar:hover) main {
     align-items:center;
     justify-content:center;
 
-    padding:6px 14px;
+    padding:4px 10px;
 
     border-radius:999px;
 
-    font-size:.9rem;
+    font-size:.75rem;
     font-weight:600;
+
+    min-width:68px;
 }
 
 .country-badge.korea{
