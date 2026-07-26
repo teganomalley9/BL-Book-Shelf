@@ -560,6 +560,9 @@ function saveEpisodeChange(newEpisode) {
             newEpisode >= show.episodes
                 ? show.dateFinished || today
                 : show.dateFinished
+        if (newEpisode >= show.episodes) {
+    window.location.href = `edit.html?id=${show.id}`;
+}
     };
 
     const index = savedShows.findIndex(item => item.id === show.id);
@@ -1106,23 +1109,23 @@ if (featuredShow) {
         show.dateStarted = today;
     }
 
-    if (show.currentEpisode >= show.episodes) {
+const isFinished =
+    show.currentEpisode >= show.episodes;
 
-        show.status = "Completed";
-
-        show.dateFinished =
-            show.dateFinished || today;
-    }
-
-    localStorage.setItem(
-        "savedShows",
-        JSON.stringify(savedShows)
-    );
-
-    location.reload();
-});
-}  
+if (isFinished) {
+    show.status = "Completed";
+    show.dateFinished = show.dateFinished || today;
 }
+
+localStorage.setItem(
+    "savedShows",
+    JSON.stringify(savedShows)
+);
+
+if (isFinished) {
+    window.location.href = `edit.html?id=${show.id}`;
+} else {
+    location.reload();
 }
 
 const recentlyFinished = document.getElementById("recentlyFinished");
@@ -1277,34 +1280,39 @@ if (watchlistTable) {
         }
 
         watchlistTable.innerHTML = `
-            <div class="watchlist-header">
-                <span>Title</span>
-                <span>Country</span>
-                <span>Mood</span>
-                <span>Episodes</span>
-                <span>Action</span>
-            </div>
-        `;
+    <div class="watchlist-header">
+        <span>Title</span>
+        <span>Country</span>
+        <span>Episodes</span>
+        <span>Action</span>
+    </div>
+`;
 
         watchlistShows.forEach(show => {
-            watchlistTable.innerHTML += `
-                <div class="watchlist-row">
-                    <span class="watchlist-title">${show.title}</span>
-                    <span>${show.country || "Unknown"}</span>
-                    <span>${show.mood || "—"}</span>
-                    <span>${show.episodes || "?"}</span>
-                    <<div class="random-actions">
-    <button class="start-watching-btn" data-id="${show.id}">
-        ▶ Start Watching
-    </button>
+    watchlistTable.innerHTML += `
+        <div class="watchlist-row">
+            <span class="watchlist-title">
+                ${show.title}
+            </span>
 
-    <button class="pick-again-btn" id="pickAgainBtn">
-        🎲 Pick Again
-    </button>
-</div>
-                </div>
-            `;
-        });
+            <span>
+                ${show.country || "Unknown"}
+            </span>
+
+            <span>
+                ${show.episodes || "?"}
+            </span>
+
+            <div class="watchlist-action">
+                <button
+                    class="start-watching-btn"
+                    data-id="${show.id}">
+                    ▶ Start Watching
+                </button>
+            </div>
+        </div>
+    `;
+});
     }
 
     function startWatching(showId) {
