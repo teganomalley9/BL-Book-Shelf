@@ -1309,8 +1309,8 @@ if (watchlistTable) {
         ${show.title}
     </span>
 </div>
-            <span>
-              ${countryFlags[show.country] || "🌍"} ${show.country || "Unknown"}
+            <span class="country-badge ${show.country.toLowerCase()}">
+                ${show.country}
             </span>
 
             <span>
