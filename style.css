@@ -869,8 +869,7 @@ input::placeholder {
 .sidebar-nav a.active {
     background: linear-gradient(135deg, #8b5cf6, #c084fc);
     color: white;
-    cursor: default;
-    pointer-events: none;
+    cursor: pointer;
     box-shadow: 0 10px 25px rgba(139, 92, 246, 0.35);
 }
 
@@ -908,10 +907,14 @@ body:has(.sidebar:hover) main {
 .watchlist-header,
 .watchlist-row {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 100px;
-    gap: 16px;
-    padding: 16px 20px;
+    grid-template-columns:
+        minmax(220px, 2fr)
+        minmax(120px, 1fr)
+        minmax(90px, 0.7fr)
+        minmax(170px, 1fr);
+
     align-items: center;
+    gap: 20px;
 }
 
 .watchlist-header {
