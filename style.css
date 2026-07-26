@@ -2206,4 +2206,21 @@ body:has(.sidebar:hover) main {
     justify-self: center !important;
     width: 100%;
 }
-   
+   /* Force compact watchlist rows */
+#watchlistTable .watchlist-row {
+    height: 64px !important;
+    min-height: 64px !important;
+    padding: 0 30px !important;
+    box-sizing: border-box;
+}
+
+#watchlistTable .start-watching-btn {
+    width: 165px !important;
+    height: 42px !important;
+    padding: 0 !important;
+}
+
+#watchlistTable .country-badge {
+    padding: 5px 12px !important;
+    min-width: 80px !important;
+}
