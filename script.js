@@ -1298,10 +1298,17 @@ if (watchlistTable) {
         watchlistShows.forEach(show => {
     watchlistTable.innerHTML += `
         <div class="watchlist-row">
-            <span class="watchlist-title">
-                ${show.title}
-            </span>
+            <div class="watchlist-show">
+    <img
+        class="watchlist-poster"
+        src="${show.poster || 'images/placeholder.png'}"
+        alt="${show.title}"
+    >
 
+    <span class="watchlist-title">
+        ${show.title}
+    </span>
+</div>
             <span>
               ${countryFlags[show.country] || "🌍"} ${show.country || "Unknown"}
             </span>
