@@ -1989,3 +1989,278 @@ body:has(.sidebar:hover) main {
     object-fit:contain;
     flex-shrink:0;
 }
+/* =========================
+   WATCHLIST FINAL DESIGN
+   ========================= */
+
+.watchlist-controls {
+    display: grid;
+    grid-template-columns:
+        minmax(220px, 1.3fr)
+        minmax(170px, 1fr)
+        minmax(170px, 1fr)
+        minmax(150px, 0.8fr)
+        auto;
+
+    gap: 16px;
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+#watchlistSearch,
+#watchlistCountry,
+#watchlistEpisodes,
+#watchlistSort {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 15px 18px;
+
+    background: rgba(18, 18, 45, 0.9);
+    color: var(--text);
+
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    border-radius: 14px;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+
+    outline: none;
+}
+
+#watchlistSearch::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+#watchlistSearch:focus,
+#watchlistCountry:focus,
+#watchlistEpisodes:focus,
+#watchlistSort:focus {
+    border-color: #a855f7;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(139, 92, 246, 0.12);
+}
+
+#watchlistCountry,
+#watchlistEpisodes,
+#watchlistSort {
+    cursor: pointer;
+}
+
+#pickRandomBtn {
+    min-width: 250px;
+
+    padding: 16px 26px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #a855f7
+    );
+
+    color: white;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 28px
+        rgba(139, 92, 246, 0.3);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#pickRandomBtn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 34px
+        rgba(139, 92, 246, 0.4);
+}
+
+#watchlistTable {
+    overflow: hidden;
+
+    background: rgba(13, 17, 40, 0.72);
+
+    border: 1px solid rgba(139, 92, 246, 0.22);
+    border-radius: 22px;
+
+    box-shadow:
+        0 18px 40px
+        rgba(0, 0, 0, 0.22);
+}
+
+.watchlist-header,
+.watchlist-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 2fr)
+        minmax(150px, 1fr)
+        minmax(100px, 0.65fr)
+        minmax(190px, 0.9fr);
+
+    gap: 24px;
+    align-items: center;
+}
+
+.watchlist-header {
+    padding: 22px 26px;
+
+    background: linear-gradient(
+        90deg,
+        rgba(139, 92, 246, 0.12),
+        rgba(24, 25, 55, 0.35)
+    );
+
+    border-bottom: 1px solid rgba(139, 92, 246, 0.28);
+
+    color: #c084fc;
+
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.watchlist-row {
+    min-height: 78px;
+    padding: 12px 26px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.watchlist-row:last-child {
+    border-bottom: none;
+}
+
+.watchlist-row:hover {
+    background: rgba(139, 92, 246, 0.07);
+}
+
+.watchlist-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.watchlist-action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.start-watching-btn {
+    min-width: 180px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #9333ea
+    );
+
+    color: white;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(139, 92, 246, 0.24);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.start-watching-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px
+        rgba(139, 92, 246, 0.36);
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+    .watchlist-controls {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #pickRandomBtn {
+        width: 100%;
+        grid-column: 1 / -1;
+    }
+
+    .watchlist-header,
+    .watchlist-row {
+        grid-template-columns:
+            minmax(220px, 1.7fr)
+            minmax(120px, 1fr)
+            minmax(80px, 0.6fr)
+            minmax(170px, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .watchlist-controls {
+        grid-template-columns: 1fr;
+    }
+
+    #pickRandomBtn {
+        grid-column: auto;
+    }
+
+    .watchlist-header {
+        display: none;
+    }
+
+    .watchlist-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        padding: 20px;
+    }
+
+    .watchlist-row span:nth-child(2)::before {
+        content: "Country: ";
+        color: var(--muted);
+    }
+
+    .watchlist-row span:nth-child(3)::before {
+        content: "Episodes: ";
+        color: var(--muted);
+    }
+
+    .watchlist-action {
+        margin-top: 6px;
+    }
+
+    .start-watching-btn {
+        width: 100%;
+    }
+}
