@@ -1284,6 +1284,7 @@ if (watchlistTable) {
         <span>Title</span>
         <span>Country</span>
         <span>Episodes</span>
+        <span></span>
     </div>
 `;
         const countryFlags = {
