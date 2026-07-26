@@ -1284,7 +1284,6 @@ if (watchlistTable) {
         <span>Title</span>
         <span>Country</span>
         <span>Episodes</span>
-        <span></span>
     </div>
 `;
         const countryFlags = {
@@ -1390,7 +1389,6 @@ if (watchlistTable) {
 
                         <div class="random-tags">
                             <span>🌍 ${show.country || "Unknown"}</span>
-                            <span>😊 ${show.mood || "—"}</span>
                             <span>📺 ${show.episodes || "?"} Episodes</span>
                             <span>⭐ ${show.priority || "Medium"}</span>
                         </div>
