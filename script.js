@@ -1128,6 +1128,10 @@ if (isFinished) {
 } else {
     location.reload();
 }
+            });
+}
+}
+}
 
 const recentlyFinished = document.getElementById("recentlyFinished");
 
