@@ -1329,9 +1329,7 @@ if (watchlistTable) {
         }
 
         renderWatchlist();
-    }
 
-    renderWatchlist();
 
     watchlistSearch.addEventListener("input", renderWatchlist);
     watchlistCountry.addEventListener("change", renderWatchlist);
