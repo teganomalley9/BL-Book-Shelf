@@ -1303,30 +1303,29 @@ if (watchlistTable) {
     watchlistTable.innerHTML += `
         <div class="watchlist-row">
 
-            <span class="watchlist-title">
-                ${show.title}
-            </span>
+    <span class="watchlist-title">
+        ${show.title}
+    </span>
 
-            <div class="watchlist-country">
-                <span class="country-badge ${countryClass}">
-                    ${show.country || "Unknown"}
-                </span>
-            </div>
+    <div class="watchlist-country">
+        <span class="country-badge ${countryClass}">
+            ${show.country || "Unknown"}
+        </span>
+    </div>
 
-            <span class="watchlist-episodes">
-                ${show.episodes || "?"}
-            </span>
+    <span class="watchlist-episodes">
+        ${show.episodes || "?"}
+    </span>
 
-            <div class="watchlist-action">
-                <button
-                    type="button"
-                    class="start-watching-btn"
-                    data-id="${show.id}">
-                    ▶ Start Watching
-                </button>
-            </div>
+    <div class="watchlist-action">
+        <button
+            class="start-watching-btn"
+            data-id="${show.id}">
+            ▶ Start Watching
+        </button>
+    </div>
 
-        </div>
+</div>
     `;
 });
     }
