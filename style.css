@@ -899,22 +899,6 @@ body:has(.sidebar:hover) main {
 }
 
 
-#pickRandomBtn{
-    background:#8B5CF6;
-    color:white;
-    border:none;
-    padding:14px 28px;
-    border-radius:999px;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.2s;
-}
-
-#pickRandomBtn:hover{
-    background:#7C3AED;
-    transform:translateY(-2px);
-}
 
 #randomRecommendation{
     margin-bottom:30px;
@@ -1867,70 +1851,50 @@ body:has(.sidebar:hover) main {
 /* ==========================================
    WATCHLIST
 ========================================== */
-
 .watchlist-controls{
     display:grid;
+
     grid-template-columns:
-        2fr
-        1fr
-        1fr
-        .8fr
-        auto;
+        minmax(260px, 2fr)
+        minmax(180px, 1fr)
+        minmax(180px, 1fr)
+        minmax(150px, .8fr)
+        minmax(240px, auto);
 
     gap:18px;
     align-items:center;
 
-    margin:35px 0;
+    margin:35px 0 40px;
 }
 
 #watchlistSearch,
 #watchlistCountry,
 #watchlistEpisodes,
 #watchlistSort{
-
     width:100%;
+    min-width:0;
 
-    padding:16px 22px;
+    box-sizing:border-box;
+
+    padding:16px 20px;
 
     border-radius:18px;
     border:1px solid rgba(139,92,246,.25);
 
     background:#181539;
-
     color:white;
 
     font-size:1rem;
     font-family:"Outfit",sans-serif;
-
-    transition:.25s;
-}
-
-#watchlistSearch::placeholder{
-    color:rgba(255,255,255,.55);
-}
-
-#watchlistSearch:focus,
-#watchlistCountry:focus,
-#watchlistEpisodes:focus,
-#watchlistSort:focus{
-
-    outline:none;
-
-    border-color:#9d5cff;
-
-    box-shadow:
-        0 0 0 4px
-        rgba(157,92,255,.15);
 }
 
 #pickRandomBtn{
-
-    width:340px;
-
-    height:74px;
+    width:100%;
+    min-width:240px;
+    height:58px;
 
     border:none;
-    border-radius:22px;
+    border-radius:18px;
 
     background:
         linear-gradient(
@@ -1941,17 +1905,16 @@ body:has(.sidebar:hover) main {
 
     color:white;
 
-    font-size:1.2rem;
+    font-size:1.05rem;
     font-weight:700;
 
     cursor:pointer;
 
-    transition:.25s;
-
     box-shadow:
-        0 18px 35px
+        0 14px 30px
         rgba(139,92,246,.30);
 }
+
 
 #pickRandomBtn:hover{
 
@@ -2084,23 +2047,18 @@ body:has(.sidebar:hover) main {
 /* ============== COUNTRY BADGES ============== */
 
 .country-badge{
-
     display:inline-flex;
-
-    justify-content:center;
     align-items:center;
+    justify-content:center;
 
-    min-width:72px;
-
-    padding:5px 10px;
+    min-width:92px;
+    padding:6px 14px;
 
     border-radius:999px;
 
-    font-size:.72rem;
-
+    font-size:.85rem;
     font-weight:700;
 }
-
 .country-badge.korea{
 
     background:#2c58d5;
