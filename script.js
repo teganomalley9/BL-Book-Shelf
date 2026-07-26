@@ -1216,7 +1216,6 @@ const watchlistTable = document.getElementById("watchlistTable");
 if (watchlistTable) {
     const watchlistSearch = document.getElementById("watchlistSearch");
     const watchlistCountry = document.getElementById("watchlistCountry");
-    const watchlistMood = document.getElementById("watchlistMood");
     const watchlistEpisodes = document.getElementById("watchlistEpisodes");
     const watchlistSort = document.getElementById("watchlistSort");
     const pickRandomBtn = document.getElementById("pickRandomBtn");
@@ -1242,10 +1241,6 @@ if (watchlistTable) {
                 watchlistCountry.value === "All" ||
                 (show.country || "").trim().toLowerCase() === watchlistCountry.value.toLowerCase();
 
-            const matchesMood =
-                watchlistMood.value === "All" ||
-                (show.mood || "").trim().toLowerCase() === watchlistMood.value.toLowerCase();
-
             const episodeCount = Number(show.episodes);
 
             const matchesEpisodes =
@@ -1255,7 +1250,7 @@ if (watchlistTable) {
                 (watchlistEpisodes.value === "long" && episodeCount >= 13 && episodeCount <= 16) ||
                 (watchlistEpisodes.value === "extra" && episodeCount >= 17);
 
-            return matchesSearch && matchesCountry && matchesMood && matchesEpisodes;
+            return matchesSearch && matchesCountry && matchesEpisodes;
         });
 
         filteredWatchlist = [...watchlistShows];
@@ -1339,7 +1334,6 @@ if (watchlistTable) {
 
     watchlistSearch.addEventListener("input", renderWatchlist);
     watchlistCountry.addEventListener("change", renderWatchlist);
-    watchlistMood.addEventListener("change", renderWatchlist);
     watchlistEpisodes.addEventListener("change", renderWatchlist);
     watchlistSort.addEventListener("change", renderWatchlist);
 
