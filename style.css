@@ -2019,8 +2019,8 @@ body:has(.sidebar:hover) main {
 /* ---------- TABLE ROWS ---------- */
 
 .watchlist-row {
-    min-height: 78px;
-    padding: 10px 32px;
+    min-height:auto;
+    padding: 8px 30px;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
@@ -2112,42 +2112,30 @@ body:has(.sidebar:hover) main {
 
 /* ---------- START WATCHING BUTTON ---------- */
 
-.start-watching-btn {
-    min-width: 175px;
-    padding: 11px 18px;
+.start-watching-btn{
+    width:165px;
+    height:46px;
 
-    color: white;
-    background:
-        linear-gradient(
-            135deg,
-            #8b5cf6,
-            #a542f4
-        );
+    padding:0;
 
-    border: none;
-    border-radius: 999px;
+    border:none;
+    border-radius:999px;
 
-    font-family: "Outfit", sans-serif;
-    font-size: 0.98rem;
-    font-weight: 750;
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #a542f4
+    );
 
-    cursor: pointer;
+    color:white;
 
-    box-shadow:
-        0 10px 24px
-        rgba(139, 92, 246, 0.27);
+    font-family:"Outfit",sans-serif;
+    font-size:.95rem;
+    font-weight:700;
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
+    cursor:pointer;
 
-.start-watching-btn:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 14px 28px
-        rgba(139, 92, 246, 0.4);
+    transition:.2s;
 }
 
 /* ---------- TABLET ---------- */
