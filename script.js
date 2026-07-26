@@ -560,10 +560,7 @@ function saveEpisodeChange(newEpisode) {
             newEpisode >= show.episodes
                 ? show.dateFinished || today
                 : show.dateFinished
-        if (newEpisode >= show.episodes) {
-    window.location.href = `edit.html?id=${show.id}`;
-}
-    };
+};
 
     const index = savedShows.findIndex(item => item.id === show.id);
 
@@ -571,6 +568,10 @@ function saveEpisodeChange(newEpisode) {
         savedShows[index] = updatedShow;
         localStorage.setItem("savedShows", JSON.stringify(savedShows));
     }
+    if (newEpisode >= show.episodes) {
+    window.location.href = `edit.html?id=${show.id}`;
+    return;
+}
 
     show.currentEpisode = updatedShow.currentEpisode;
     show.status = updatedShow.status;
