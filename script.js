@@ -1137,7 +1137,6 @@ if (continueWatching) {
 
 const recentlyFinished = document.getElementById("recentlyFinished");
 
-    document.getElementById("recentlyFinished")
 ;
 if (recentlyFinished) {
     
