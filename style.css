@@ -2070,47 +2070,52 @@ body:has(.sidebar:hover) main {
 }
 /* ---------- COUNTRY BADGES ---------- */
 
-.country-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.country-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
 
-    min-width: 100px;
-    padding: 6px 12px;
+    min-width:88px;
+    padding:6px 12px;
 
-    border-radius: 999px;
+    border-radius:999px;
 
-    font-size: 0.84rem;
-    font-weight: 750;
-    line-height: 1;
+    color:white;
+    font-size:.82rem;
+    font-weight:700;
 }
 
-.country-badge.korea {
-    background: #3b82f6;
-    color: white;
+/* South Korea */
+.country-badge.korea{
+    background:#2563eb !important;
 }
 
-.country-badge.japan {
-    background: #f3f4f6;
-    color: #e11d48;
-    border: 1px solid #d1d5db;
+/* Japan */
+.country-badge.japan{
+    background:#f5f5f5 !important;
+    color:#dc2626 !important;
+    border:1px solid #d1d5db;
 }
 
-.country-badge.thailand {
-    background: #8b5cf6;
-    color: white;
+/* Thailand */
+.country-badge.thailand{
+    background:#8b5cf6 !important;
 }
 
-.country-badge.taiwan {
-    background: #14b8a6;
-    color: white;
+/* China */
+.country-badge.china{
+    background:#ef4444 !important;
 }
 
-.country-badge.china {
-    background: #ef4444;
-    color: white;
+/* Taiwan */
+.country-badge.taiwan{
+    background:#14b8a6 !important;
 }
 
+/* Philippines */
+.country-badge.philippines{
+    background:#f59e0b !important;
+}
 /* ---------- START WATCHING BUTTON ---------- */
 
 .start-watching-btn{
