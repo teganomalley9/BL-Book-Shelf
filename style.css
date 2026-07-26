@@ -2086,28 +2086,28 @@ body:has(.sidebar:hover) main {
 }
 
 .country-badge.korea {
-    background: #2563eb;   /* Blue */
+    background: #3b82f6;
     color: white;
 }
 
 .country-badge.japan {
-    background: #ffffff;   /* White */
-    color: #dc2626;
-    border: 1px solid rgba(0,0,0,.15);
+    background: #f3f4f6;
+    color: #e11d48;
+    border: 1px solid #d1d5db;
 }
 
 .country-badge.thailand {
-    background: #7c3aed;   /* Purple */
+    background: #8b5cf6;
     color: white;
 }
 
 .country-badge.taiwan {
-    background: #f59e0b;   /* Amber */
+    background: #14b8a6;
     color: white;
 }
 
 .country-badge.china {
-    background: #dc2626;   /* Red */
+    background: #ef4444;
     color: white;
 }
 
