@@ -1128,10 +1128,13 @@ if (isFinished) {
 } else {
     location.reload();
 }
-            });
-}
-}
-}
+
+    }); // closes the button click listener
+}      // closes if (featuredShow)
+}      // closes the else block
+}      // closes if (continueWatching)
+
+const recentlyFinished = document.getElementById("recentlyFinished");
 
 const recentlyFinished = document.getElementById("recentlyFinished");
 
