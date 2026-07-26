@@ -2099,7 +2099,8 @@ body:has(.sidebar:hover) main {
 
 /* Thailand */
 .country-badge.thailand{
-    background:#8b5cf6 !important;
+    background:#ec4899 !important;
+    color:white;
 }
 
 /* China */
