@@ -1905,19 +1905,19 @@ body:has(.sidebar:hover) main {
    WATCHLIST FINAL DESIGN
    ========================= */
 
-.watchlist-controls {
-    display: grid;
+.watchlist-controls{
+    display:grid;
+
     grid-template-columns:
-minmax(420px,2.8fr)
-        170px
-        120px
-        230px;
-        auto;
+    2fr
+    1fr
+    1fr
+    .8fr
+    auto;
 
-    gap: 16px;
-    align-items: center;
+    align-items:center;
 
-    margin-bottom: 28px;
+    gap:18px;
 }
 
 #watchlistSearch,
@@ -2185,4 +2185,41 @@ minmax(420px,2.8fr)
     .start-watching-btn {
         width: 100%;
     }
+}
+.country-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.country-badge.korea{
+    background:#1f4fd3;
+    color:white;
+}
+
+.country-badge.japan{
+    background:#f3f3f3;
+    color:#d6001c;
+}
+
+.country-badge.thailand{
+    background:#c62828;
+    color:white;
+}
+
+.country-badge.taiwan{
+    background:#1565c0;
+    color:white;
+}
+
+.country-badge.china{
+    background:#d32f2f;
+    color:white;
 }
