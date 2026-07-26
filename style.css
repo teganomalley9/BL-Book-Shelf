@@ -1907,13 +1907,12 @@ body:has(.sidebar:hover) main {
 
 .watchlist-controls{
     display:grid;
-
     grid-template-columns:
-    2fr
-    1fr
-    1fr
-    .8fr
-    auto;
+    minmax(420px,2.8fr)
+        170px 2fr
+        120px 1 fr
+        230px .8fr;
+        auto;
 
     align-items:center;
 
