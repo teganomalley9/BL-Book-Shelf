@@ -1295,7 +1295,11 @@ if (watchlistTable) {
     China: "🇨🇳"
 };
 
-   watchlistShows.forEach(show => {
+  watchlistShows.forEach(show => {
+    const countryClass = (show.country || "unknown")
+        .toLowerCase()
+        .replaceAll(" ", "-");
+
     watchlistTable.innerHTML += `
         <div class="watchlist-row">
 
@@ -1303,11 +1307,11 @@ if (watchlistTable) {
                 ${show.title}
             </span>
 
-            <span>
-                <span class="country-badge ${show.country.toLowerCase()}">
-                    ${show.country}
+            <div class="watchlist-country">
+                <span class="country-badge ${countryClass}">
+                    ${show.country || "Unknown"}
                 </span>
-            </span>
+            </div>
 
             <span class="watchlist-episodes">
                 ${show.episodes || "?"}
@@ -1315,6 +1319,7 @@ if (watchlistTable) {
 
             <div class="watchlist-action">
                 <button
+                    type="button"
                     class="start-watching-btn"
                     data-id="${show.id}">
                     ▶ Start Watching
