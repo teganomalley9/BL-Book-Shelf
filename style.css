@@ -2212,5 +2212,10 @@ body:has(.sidebar:hover) main {
         width: 100%;
     }
 }
- 
+ .watchlist-header > :nth-child(3),
+.watchlist-row > :nth-child(3) {
+    text-align: center !important;
+    justify-self: center !important;
+    width: 100%;
+}
    
