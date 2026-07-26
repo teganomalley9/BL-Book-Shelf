@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DwaM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 :root {
     --bg: #0f1028;
     --sidebar: #171733;
@@ -19,6 +18,12 @@ body {
         radial-gradient(circle at top left, #33236d 0%, #15162f 45%, #0f1028 100%);
     color: var(--text);
     font-family: 'Outfit', sans-serif;
+}
+button,
+input,
+select,
+textarea {
+    font: inherit;
 }
 
 h1, h2, h3, h4 {
